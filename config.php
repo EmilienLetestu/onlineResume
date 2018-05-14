@@ -25,7 +25,7 @@ class appAutoload
         define('ROOT', $root.'/onlineResume/');
 
         define('CONTROLLER', ROOT.'controller/');
-        define('CLASSES', ROOT.'classes/');
+        define('CONFIG', ROOT.'config/');
         define('MANAGER', ROOT.'manager/');
         define('REPOSITORY', ROOT.'repository/');
         define('ENTITY', ROOT.'entity/');
@@ -62,8 +62,8 @@ class appAutoload
                 include_once (VIEW.$class.'.php');
                 break
             ;
-            case file_exists(CLASSES.$class.'.php');
-                include_once (CLASSES.$class.'.php');
+            case file_exists(CONFIG.$class.'.php');
+                include_once (CONFIG.$class.'.php');
                 break
             ;
         }
