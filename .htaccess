@@ -1,0 +1,11 @@
+#allow url rewritting
+
+RewriteEngine on
+
+#don't rename existing file
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+#redirect all to home.php
+
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
