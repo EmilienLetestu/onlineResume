@@ -10,9 +10,9 @@ class View
 {
     /**
      * @param string $template
-     * @param array $data
+     * @param array|null $data
      */
-    public function render(string $template, array $data)
+    public function render(string $template, ?array $data)
     {
         ob_start();
 
