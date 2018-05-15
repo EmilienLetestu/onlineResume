@@ -30,6 +30,8 @@ class appAutoload
         define('REPOSITORY', ROOT.'repository/');
         define('ENTITY', ROOT.'entity/');
         define('VIEW', ROOT.'view/');
+        define('HANDLER', ROOT.'formHandler/');
+        define('VALIDATOR', ROOT.'validator/');
 
         define('ASSETS', HOST.'assets/');
     }
@@ -64,6 +66,14 @@ class appAutoload
             ;
             case file_exists(CONFIG.$class.'.php');
                 include_once (CONFIG.$class.'.php');
+                break
+            ;
+            case file_exists(HANDLER.$class.'.php');
+                include_once (HANDLER.$class.'.php');
+                break
+            ;
+            case file_exists(VALIDATOR.$class.'.php');
+                include_once (VALIDATOR.$class.'.php');
                 break
             ;
         }
