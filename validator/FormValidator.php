@@ -4,7 +4,10 @@
  * User: emilien
  * Date: 15/05/2018
  * Time: 13:11
+ *
+ * A set of methods to use in form validation process
  */
+
 
 class FormValidator
 {

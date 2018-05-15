@@ -9,6 +9,8 @@
 class View
 {
     /**
+     * to render a view add a template name and the data to render
+     *
      * @param string $template
      * @param array|null $data
      */

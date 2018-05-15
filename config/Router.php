@@ -10,18 +10,19 @@ class Router
 {
 
     /**
-     * declare all your routes here
+     * declare all your routes and associated controllers here
      * @var array
      */
     private $routes = [
 
-        "home" => ["controller" => "HomeController"],
-        "add-skill" => ["controller" => "AddSkillController"],
+        "home"              => ["controller" => "HomeController"],
+        "add-skill"         => ["controller" => "AddSkillController"],
         "process-add-skill" => ["controller" => "ProcessAddSkillController"]
 
     ];
 
     /**
+     * get last part from url and use it later on to get a matching route
      * @return string
      */
     private function getRequest():string

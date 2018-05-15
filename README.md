@@ -1,3 +1,3 @@
 # onlineResume
 
-## A full POO PHP Project about "me myself I" : )
+## A full OOP PHP Project about "me myself I" : )

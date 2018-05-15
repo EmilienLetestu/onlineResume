@@ -4,6 +4,8 @@
  * User: emilien
  * Date: 23/04/2018
  * Time: 14:32
+ *
+ * configuration file is based on "littleblackman" config for simple MVC and FULL PHH OPP project
  */
 
 ini_set('display_errors','on');
@@ -12,7 +14,6 @@ error_reporting(E_ALL);
 
 class appAutoload
 {
-
     public static function start()
     {
         spl_autoload_register([__CLASS__ ,'autoload']);

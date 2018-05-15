@@ -14,14 +14,16 @@ class AddSkillHandler
      */
     private function isSubmitted() :bool
     {
-        $name  = isset($_POST['skillName'])  ? $_POST['skillName'] : null;
-        $level = isset($_POST['skillLevel']) ? $_POST['skillLevel'] : null;
+        $name  = $_POST['skillName']  ?? null;
+        $level = $_POST['skillLevel'] ?? null;
 
         return $level !== null && $name !== null;
     }
 
 
     /**
+     * process submitted data and store them into db
+     *
      * @param Skill $skill
      * @return bool
      */

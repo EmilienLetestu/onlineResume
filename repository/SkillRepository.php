@@ -10,6 +10,8 @@ class SkillRepository extends Bdd
 {
 
     /**
+     * get all the skills stored into db
+     *
      * @return array
      */
     public function getAllSkills() :?array
@@ -33,6 +35,8 @@ class SkillRepository extends Bdd
     }
 
     /**
+     * fetch a given skill based on its id
+     *
      * @param int $id
      * @return null|Skill
      */

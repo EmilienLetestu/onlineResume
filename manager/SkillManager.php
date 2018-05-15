@@ -9,6 +9,8 @@
 class SkillManager extends Bdd
 {
     /**
+     * add a new skill to db
+     *
      * @param Skill $skill
      */
     public function addSkill(Skill $skill)

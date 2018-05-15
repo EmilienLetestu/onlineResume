@@ -8,6 +8,8 @@
 class Redirection
 {
     /**
+     * redirect to a given page / controller
+     *
      * @param string $path
      * @return Redirection
      */

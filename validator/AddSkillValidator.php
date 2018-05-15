@@ -9,6 +9,8 @@
 class AddSkillValidator extends FormValidator
 {
     /**
+     * check if submitted data from add skill from are valid
+     *
      * @return bool
      */
     public function isValid() :bool

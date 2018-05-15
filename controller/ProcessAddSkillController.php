@@ -10,10 +10,8 @@ class ProcessAddSkillController
 {
     public function __invoke()
     {
-
        $skill = new Skill();
        $skillHandler =  new AddSkillHandler();
-
 
        if($skillHandler->handle($skill)){
 
