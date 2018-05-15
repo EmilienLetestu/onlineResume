@@ -12,14 +12,13 @@ class HomeController
     public function __invoke()
     {
         $view      = new View();
-        $skill     = new Skill();
-        $skillList = new SkillRepository($skill);
+        $skillList = new SkillRepository();
+        
 
         $view->render( 'home',$data = [
             'title'    => 'dssdqsdsqd',
             'subtitle' => 'AAAAAAA',
-            'skillList'=> $skillList->getAllSkills(),
-            'php'      => $skillList->getSkillById(2)
+            'skillList'=> $skillList->getAllSkills()
         ]);
     }
 }

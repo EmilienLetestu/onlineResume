@@ -8,19 +8,6 @@
 
 class SkillRepository extends Bdd
 {
-    /**
-     * @var Skill
-     */
-    private $skill;
-
-    /**
-     * SkillRepository constructor.
-     * @param Skill $skill
-     */
-    public function __construct(Skill $skill)
-    {
-        $this->skill = $skill;
-    }
 
     /**
      * @return array
@@ -36,7 +23,7 @@ class SkillRepository extends Bdd
 
         while ($row = $request->fetch(PDO::FETCH_ASSOC)){
 
-           $skill = $this->skill;
+           $skill = new Skill();
            $skill->setName($row['name']);
            $skill->setLevel($row['level']);
            $results[] = $skill;
@@ -59,7 +46,7 @@ class SkillRepository extends Bdd
 
         $row = $request->fetch(PDO::FETCH_ASSOC);
 
-        $skill = $this->skill;
+        $skill = new Skill();
         $skill->setName($row['name']);
         $skill->setLevel($row['level']);
 
