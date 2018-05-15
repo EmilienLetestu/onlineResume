@@ -9,26 +9,11 @@
 class View
 {
     /**
-     * @var
-     */
-    private $template;
-
-    /**
-     * View constructor.
-     * @param $template
-     */
-    public function __construct($template)
-    {
-        $this->template = $template;
-    }
-
-    /**
+     * @param string $template
      * @param array $data
      */
-    public function render(array $data)
+    public function render(string $template, array $data)
     {
-        $template = $this->template;
-
         ob_start();
 
         include(VIEW.$template.'.php');

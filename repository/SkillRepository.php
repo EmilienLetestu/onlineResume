@@ -8,6 +8,19 @@
 
 class SkillRepository extends Bdd
 {
+    /**
+     * @var Skill
+     */
+    private $skill;
+
+    /**
+     * SkillRepository constructor.
+     * @param Skill $skill
+     */
+    public function __construct(Skill $skill)
+    {
+        $this->skill = $skill;
+    }
 
     /**
      * @return array
@@ -19,37 +32,37 @@ class SkillRepository extends Bdd
         $request->execute();
 
 
-        $result = $request->fetchAll();
-
         $results = [];
 
-        foreach ($result as $data)
-        {
-            $results[] = [
-                'id'    => $data['id'],
-                'name'  => $data['name'],
-                'level' => $data['level']
-            ];
-        }
+        while ($row = $request->fetch(PDO::FETCH_ASSOC)){
+
+           $skill = $this->skill;
+           $skill->setName($row['name']);
+           $skill->setLevel($row['level']);
+           $results[] = $skill;
+       }
 
         return $results;
     }
 
     /**
-     * @param string $name
-     * @param int $level
+     * @param int $id
+     * @return null|Skill
      */
-    public function addSkill(string $name, int $level)
+    public function getSkillById(int $id) :?Skill
     {
         $pdo = $this->getPdo();
+        $query = 'SELECT * FROM skill WHERE id = :id';
+        $request = $pdo->prepare($query);
+        $request->bindValue(':id', $id);
+        $request->execute();
 
-        $request = $pdo->prepare(
-            'INSERT INTO skill(name, level) VALUES(:name, :level)'
-        );
+        $row = $request->fetch(PDO::FETCH_ASSOC);
 
-        $request->execute([
-            'name'  => $name,
-            'level' => $level
-        ]);
+        $skill = $this->skill;
+        $skill->setName($row['name']);
+        $skill->setLevel($row['level']);
+
+        return $skill;
     }
 }
