@@ -15,7 +15,9 @@ class Router
      */
     private $routes = [
 
-        "home" => ["controller" => "HomeController"]
+        "home" => ["controller" => "HomeController"],
+        "add-skill" => ["controller" => "AddSkillController"],
+        "process-add-skill" => ["controller" => "ProcessAddSkillController"]
 
     ];
 
