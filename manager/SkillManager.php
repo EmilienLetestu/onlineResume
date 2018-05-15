@@ -9,10 +9,9 @@
 class SkillManager extends Bdd
 {
     /**
-     * @param string $name
-     * @param int $level
+     * @param Skill $skill
      */
-    public function addSkill(string $name, int $level)
+    public function addSkill(Skill $skill)
     {
         $pdo = $this->getPdo();
 
@@ -21,8 +20,8 @@ class SkillManager extends Bdd
         );
 
         $request->execute([
-            'name'  => $name,
-            'level' => $level
+            'name'  => $skill->getName(),
+            'level' => $skill->getLevel()
         ]);
     }
 }
