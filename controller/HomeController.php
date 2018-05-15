@@ -14,7 +14,7 @@ class HomeController
         $view      = new View();
         $skillList = new SkillRepository();
 
-        $view->render( 'home',$data = [
+        $view->render( 'home',[
             'title'    => 'dssdqsdsqd',
             'subtitle' => 'AAAAAAA',
             'skillList'=> $skillList->getAllSkills()

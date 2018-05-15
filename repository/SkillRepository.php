@@ -26,6 +26,7 @@ class SkillRepository extends Bdd
         while ($row = $request->fetch(PDO::FETCH_ASSOC)){
 
            $skill = new Skill();
+           $skill->setId($row['id']);
            $skill->setName($row['name']);
            $skill->setLevel($row['level']);
            $results[] = $skill;
@@ -43,17 +44,20 @@ class SkillRepository extends Bdd
     public function getSkillById(int $id) :?Skill
     {
         $pdo = $this->getPdo();
-        $query = 'SELECT * FROM skill WHERE id = :id';
-        $request = $pdo->prepare($query);
+        $request = $pdo->prepare(
+            'SELECT * FROM skill WHERE id = :id'
+        );
         $request->bindValue(':id', $id);
         $request->execute();
 
         $row = $request->fetch(PDO::FETCH_ASSOC);
 
         $skill = new Skill();
+        $skill->setId($row['id']);
         $skill->setName($row['name']);
         $skill->setLevel($row['level']);
 
         return $skill;
     }
+
 }

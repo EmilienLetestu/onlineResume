@@ -24,6 +24,12 @@ class Skill
     private $level;
 
 
+
+    public function setId(int $id)
+    {
+        $this->id = $id;
+    }
+
     /**
      * @return int|null
      */

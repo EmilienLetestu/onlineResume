@@ -26,4 +26,17 @@ class SkillManager extends Bdd
             'level' => $skill->getLevel()
         ]);
     }
+
+    /**
+     * @param int $id
+     */
+    public function deleteSkillById(int $id)
+    {
+        $pdo = $this->getPdo();
+        $request = $pdo->prepare(
+            'DELETE FROM skill WHERE id = :id '
+        );
+        $request->bindValue(':id', $id);
+        $request->execute();
+    }
 }
