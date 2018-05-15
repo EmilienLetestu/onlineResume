@@ -3,14 +3,13 @@
  * Created by PhpStorm.
  * User: emilien
  * Date: 15/05/2018
- * Time: 12:01
+ * Time: 22:43
  */
 
-class AddSkillController
+class ModifySkillController
 {
     public function __invoke()
     {
-        $view  = new View();
-        $view->render('addSkill');
+
     }
 }
