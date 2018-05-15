@@ -12,9 +12,9 @@ class View
      * to render a view add a template name and the data to render
      *
      * @param string $template
-     * @param array|null $data
+     * @param array
      */
-    public function render(string $template, ?array $data)
+    public function render(string $template, array $data=null)
     {
         ob_start();
 
