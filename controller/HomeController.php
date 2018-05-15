@@ -8,18 +8,18 @@
 
 class HomeController
 {
+
     public function __invoke()
     {
-        $title = 'dssdqsdsqd';
+        $view      = new View();
+        $skill     = new Skill();
+        $skillList = new SkillRepository($skill);
 
-        $view = new View('home');
-        $skillList = new SkillRepository();
-
-
-        $view->render( $data = [
-            'title' => $title,
+        $view->render( 'home',$data = [
+            'title'    => 'dssdqsdsqd',
             'subtitle' => 'AAAAAAA',
-            'skillList' => $skillList
+            'skillList'=> $skillList->getAllSkills(),
+            'php'      => $skillList->getSkillById(2)
         ]);
     }
 }
