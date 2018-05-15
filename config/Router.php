@@ -8,21 +8,24 @@
 
 class Router
 {
-
     /**
      * declare all your routes and associated controllers here
+     *
      * @var array
      */
     private $routes = [
-
-        "home"              => ["controller" => "HomeController"],
-        "add-skill"         => ["controller" => "AddSkillController"],
-        "process-add-skill" => ["controller" => "ProcessAddSkillController"]
-
+        "home"                 => ["controller" => "HomeController"],
+        "add-skill"            => ["controller" => "AddSkillController"],
+        "process-add-skill"    => ["controller" => "ProcessAddSkillController"],
+        "admin"                => ["controller" => "AdminController"],
+        "modify-skill"         => ["controller" => "ModifySkillController"],
+        "process-modify-skill" => ["controller" => "ProcessModifySkillController"],
+        "delete-skill"         => ["controller" => "DeleteSkillController"]
     ];
 
     /**
      * get last part from url and use it later on to get a matching route
+     *
      * @return string
      */
     private function getRequest():string
@@ -30,11 +33,12 @@ class Router
         $request = $_SERVER['REQUEST_URI'];
         $route   = explode('/',$request);
 
-        return end($route);
+        return $route[2];
     }
 
     /**
      * for a given route get its matching controller and execute its method
+     *
      * @param string $requestedRoute
      * @return mixed
      */
