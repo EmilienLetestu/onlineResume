@@ -20,30 +20,6 @@ class AddSkillHandler
         return $level !== null && $name !== null;
     }
 
-    /**
-     * @return bool
-     */
-    private function isValid() :bool
-    {
-        if($this->isSubmitted()){
-
-            $name  = $_POST['skillName'];
-            $level = $_POST['skillLevel'];
-
-            $validator = new FormValidator();
-
-            $validationGroup = [
-                $validator->checkType($name,'string'),
-                $validator->checkType(intval($level), 'integer'),
-                $validator->checkLength($name,2,30),
-                $validator->checkRange(intval($level), 50, 100)
-            ];
-
-            return $validator->validate($validationGroup);
-        }
-
-        return false;
-    }
 
     /**
      * @param Skill $skill
@@ -51,7 +27,9 @@ class AddSkillHandler
      */
     public function handle(Skill $skill):bool
     {
-        if($this->isSubmitted() && $this->isValid()){
+        $validator = new AddSkillValidator();
+
+        if($this->isSubmitted() && $validator->isValid()){
 
             $skill->setName($_POST['skillName']);
             $skill->setLevel($_POST['skillLevel']);
