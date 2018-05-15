@@ -13,7 +13,6 @@ class HomeController
     {
         $view      = new View();
         $skillList = new SkillRepository();
-        
 
         $view->render( 'home',$data = [
             'title'    => 'dssdqsdsqd',
