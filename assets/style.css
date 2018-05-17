@@ -1,3 +1,7 @@
 #test{
     font-size: 3rem;
 }
+
+#modalSkillForm{
+    display: none;
+}

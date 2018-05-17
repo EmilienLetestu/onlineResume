@@ -16,10 +16,8 @@ class Router
     private $routes = [
         "home"                 => ["controller" => "HomeController"],
         "add-skill"            => ["controller" => "AddSkillController"],
-        "process-add-skill"    => ["controller" => "ProcessAddSkillController"],
         "admin"                => ["controller" => "AdminController"],
         "modify-skill"         => ["controller" => "ModifySkillController"],
-        "process-modify-skill" => ["controller" => "ProcessModifySkillController"],
         "delete-skill"         => ["controller" => "DeleteSkillController"]
     ];
 

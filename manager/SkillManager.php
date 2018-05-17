@@ -28,6 +28,27 @@ class SkillManager extends Bdd
     }
 
     /**
+     * update data of a given skill
+     *
+     * @param Skill $skill
+     * @param $id
+     */
+    public function updateSkill(Skill $skill, $id)
+    {
+        $pdo = $this->getPdo();
+
+        $request = $pdo->prepare(
+            'UPDATE skill SET name = :name, level = :level WHERE id = :id'
+        );
+
+        $request->execute([
+            'name'  => $skill->getName(),
+            'level' => $skill->getLevel(),
+            'id'    => $id
+        ]);
+    }
+
+    /**
      * @param int $id
      */
     public function deleteSkillById(int $id)

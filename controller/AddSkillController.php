@@ -10,7 +10,15 @@ class AddSkillController
 {
     public function __invoke()
     {
-        $view  = new View();
-        $view->render('addSkill');
+        $skill = new Skill();
+        $skillHandler =  new AddSkillHandler();
+
+        if($skillHandler->handle($skill)){
+
+            return  Redirection::redirect('admin');
+
+        }
+
+        return Redirection::redirect('admin');
     }
 }
