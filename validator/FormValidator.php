@@ -46,6 +46,21 @@ class FormValidator
     }
 
     /**
+     * count number of word in a text and check if it match min/max
+     *
+     * @param string $value
+     * @param int $min
+     * @param int $max
+     * @return bool
+     */
+    public function checkTextLength(string $value, int $min, int $max) :bool
+    {
+        $length = count(explode(' ', $value));
+
+        return $length >= $min && $length <= $max;
+    }
+
+    /**
      * @param array $group
      * @return bool
      */
@@ -53,4 +68,5 @@ class FormValidator
     {
         return !in_array(false,$group, true);
     }
+
 }
