@@ -8,6 +8,8 @@
 
 class Router
 {
+    //todo : routing system has to be more flexible => has to be redesigned before prod version !!!
+
     /**
      * declare all your routes and associated controllers here
      *
@@ -18,7 +20,9 @@ class Router
         "add-skill"            => ["controller" => "AddSkillController"],
         "admin"                => ["controller" => "AdminController"],
         "modify-skill"         => ["controller" => "ModifySkillController"],
-        "delete-skill"         => ["controller" => "DeleteSkillController"]
+        "delete-skill"         => ["controller" => "DeleteSkillController"],
+        "project-list"         => ["controller" => "ProjectListController"],
+        "add-project"          => ["controller" => "AddProjectController"]
     ];
 
     /**
