@@ -18,8 +18,7 @@ class ProjectManager extends Bdd
         $pdo = $this->getPdo();
 
         $request = $pdo->prepare(
-            'INSERT INTO project (name, url, tech, pitch, pict_ref) 
-                      VALUES (:name, :url, :tech, :picth, :pict_ref)'
+            'INSERT INTO project(name, url, tech, pitch, pict_ref) VALUES(:name, :url, :tech, :pitch, :pict_ref)'
         );
 
         $request->execute([
