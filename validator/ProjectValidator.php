@@ -17,6 +17,7 @@ class ProjectValidator extends FormValidator
         $pitch   = $_POST['projectPitch'];
         $tech    = $_POST['projectTech'];
         $url     = $_POST['projectUrl'];
+        $pict    = $_FILES['projectPict']['name'];
 
 
         $validationGroup = [
@@ -24,6 +25,14 @@ class ProjectValidator extends FormValidator
             $this->checkLength($tech, 3, 250),
             $this->checkTextLength($pitch, 10, 40),
             $url !== null ?? $this->checkLength($url, 10, 50),
+            $this->checkFileExtension(
+                $pict,
+                ['jpg', 'jpeg', 'png', 'gif']
+            ),
+            $this->checkFileSize(
+                $_FILES['projectPict']['size'],
+                5000000
+            )
 
         ];
 

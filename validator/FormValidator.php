@@ -61,6 +61,30 @@ class FormValidator
     }
 
     /**
+     * @param string $filePath
+     * @param array $authorisedExtension
+     * @return bool
+     */
+    public function checkFileExtension(string $filePath, array $authorisedExtension) :bool
+    {
+        return in_array(
+            pathinfo($filePath, PATHINFO_EXTENSION),
+            $authorisedExtension,
+            true
+        );
+    }
+
+    /**
+     * @param int $fileSize
+     * @param int $max
+     * @return bool
+     */
+    public function checkFileSize(int $fileSize, int $max) :bool
+    {
+        return $fileSize <= $max;
+    }
+
+    /**
      * @param array $group
      * @return bool
      */
