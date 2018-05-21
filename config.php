@@ -33,8 +33,10 @@ class appAutoload
         define('VIEW', ROOT.'view/');
         define('HANDLER', ROOT.'formHandler/');
         define('VALIDATOR', ROOT.'validator/');
+        define('HELPER', ROOT.'helper/');
 
         define('ASSETS', HOST.'assets/');
+        define('PICT_DIR',ROOT.'assets/pictures/');
     }
 
     /**
@@ -75,6 +77,10 @@ class appAutoload
             ;
             case file_exists(VALIDATOR.$class.'.php');
                 include_once (VALIDATOR.$class.'.php');
+                break
+            ;
+            case file_exists(HELPER.$class.'.php');
+                include_once (HELPER.$class.'.php');
                 break
             ;
         }
