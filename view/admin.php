@@ -19,8 +19,8 @@
 <div id="modalSkillForm">
     <span class="close" onclick="closeForm('modalSkillForm')">x</span>
     <form action="" method="post" id="skillForm">
-        <input type="text" name="skillName" id="skillName">
-        <input type="number" name="skillLevel" id="skillLevel">
+        <input type="text" name="skillName" id="skillName"/>
+        <input type="number" name="skillLevel" id="skillLevel"/>
         <button type="submit">Ajouter</button>
     </form>
 </div>
