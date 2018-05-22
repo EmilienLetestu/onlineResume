@@ -16,7 +16,7 @@ class DeleteSkillController
 
        $manager->deleteSkillById(end($request));
 
-       return Redirection::redirect('admin');
+       return Redirection::redirect('dashboard');
 
     }
 }

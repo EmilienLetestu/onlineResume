@@ -18,10 +18,9 @@ class Router
     private $routes = [
         "home"                 => ["controller" => "HomeController"],
         "add-skill"            => ["controller" => "AddSkillController"],
-        "admin"                => ["controller" => "AdminController"],
+        "dashboard"            => ["controller" => "AdminDashboardController"],
         "modify-skill"         => ["controller" => "ModifySkillController"],
         "delete-skill"         => ["controller" => "DeleteSkillController"],
-        "project-list"         => ["controller" => "ProjectListController"],
         "add-project"          => ["controller" => "AddProjectController"],
         "delete-project"       => ["controller" => "DeleteProjectController"]
     ];

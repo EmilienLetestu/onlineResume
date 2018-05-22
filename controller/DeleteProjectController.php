@@ -18,6 +18,6 @@ class DeleteProjectController
 
        $manager->deleteProjectByName(end($request));
 
-       return Redirection::redirect('project-list');
+       return Redirection::redirect('dashboard');
     }
 }

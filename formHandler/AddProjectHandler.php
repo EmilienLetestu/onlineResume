@@ -8,9 +8,6 @@
 
 class AddProjectHandler
 {
-    /**
-     * @return bool
-     */
     private function isSubmitted() :bool
     {
         $name  = $_POST['projectName']  ?? null;

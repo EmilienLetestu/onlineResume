@@ -16,9 +16,9 @@ class AddProjectController
 
         if($handler->handle($project))
         {
-            return Redirection::redirect('project-list');
+            return Redirection::redirect('dashboard');
         }
 
-        return Redirection::redirect('project-list');
+        return Redirection::redirect('dashboard');
     }
 }

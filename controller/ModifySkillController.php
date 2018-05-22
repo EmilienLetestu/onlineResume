@@ -17,9 +17,9 @@ class ModifySkillController
 
         if($handler->handle($skill, end($request))){
 
-            return  Redirection::redirect('admin');
+            return  Redirection::redirect('dashboard');
         }
 
-        return  Redirection::redirect('home');
+        return  Redirection::redirect('dashboard');
     }
 }

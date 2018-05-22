@@ -2,6 +2,7 @@
     font-size: 3rem;
 }
 
-#modalSkillForm{
+#modalSkillForm,
+#modalProjectForm{
     display: none;
 }
