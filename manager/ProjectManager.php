@@ -46,4 +46,27 @@ class ProjectManager extends Bdd
         $request->bindValue(':name', $name);
         $request->execute();
     }
+
+    /**
+     * @param Project $project
+     * @param $id
+     */
+    public function updateProject(Project $project, $id)
+    {
+        $pdo = $this->getPdo();
+
+        $request = $pdo->prepare(
+            'UPDATE project SET name = :name, url = :url, tech = :tech, pitch = :pitch, pict_ref = :pict_ref WHERE id = :id'
+        );
+
+        $request->execute([
+            'name'     => $project->getName(),
+            'url'      => $project->getUrl(),
+            'tech'     => $project->getTech(),
+            'pitch'    => $project->getPitch(),
+            'pict_ref' => $project->getPictRef(),
+            'id'       => $id
+
+        ]);
+    }
 }

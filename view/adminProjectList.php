@@ -7,6 +7,7 @@
 <div id="projectForm">
     <form method="post" action="<?php echo HOST.'add-project';?>" enctype="multipart/form-data">
         <input type="text" name="projectName" id="projectName">
+        <input type="hidden" name="originalName" value="">
         <input type="text" name="projectTech" id="projectTech">
         <textarea name="projectPitch" rows="10" cols="40" id="projectPitch"></textarea>
         <input type="url" name="projectUrl" id="projectUrl">

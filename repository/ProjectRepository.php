@@ -14,11 +14,11 @@ class ProjectRepository extends Bdd
      *
      * @return array
      */
-    public function getAllProjects()
+    public function getAllProjects() :?array
     {
         $pdo = $this->getPdo();
 
-        $request = $pdo->prepare('SELECT * FROM preoject');
+        $request = $pdo->prepare('SELECT * FROM project');
         $request->execute();
 
         $results = [];
@@ -37,5 +37,31 @@ class ProjectRepository extends Bdd
         }
 
         return $results;
+    }
+
+    /**
+     * @param int $id
+     * @return null|Project
+     */
+    public function getProjectById(int $id) :?Project
+    {
+        $pdo = $this->getPdo();
+
+        $request = $pdo->prepare('SELECT * FROM prooject WHERE id = :id');
+        $request->bindValue(':id', $id);
+        $request->execute();
+
+        $row = $request->fetch(PDO::FETCH_ASSOC);
+
+        $project = new Project();
+
+        $project->setId($row['id']);
+        $project->setName($row['name']);
+        $project->setPictRef($row['pictRef']);
+        $project->setUrl($row['url']);
+        $project->setTech($row['tech']);
+        $project->setPitch($row['pitch']);
+
+        return $project;
     }
 }

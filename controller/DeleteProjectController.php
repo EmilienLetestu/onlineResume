@@ -14,7 +14,7 @@ class DeleteProjectController
 
        $manager = new ProjectManager();
 
-       array_map('unlink', glob(PICT_DIR.end($request).'_project.*'));
+       array_map('unlink', glob(PICT_DIR.end($request).'_projectPict.*'));
 
        $manager->deleteProjectByName(end($request));
 
