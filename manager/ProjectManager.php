@@ -29,4 +29,21 @@ class ProjectManager extends Bdd
             'pict_ref' => $project->getPictRef()
         ]);
     }
+
+    /**
+     * delete a given project from db based on its name
+     *
+     * @param string $name
+     */
+    public function deleteProjectByName(string $name)
+    {
+        $pdo = $this->getPdo();
+
+        $request = $pdo->prepare(
+            'DELETE FROM project WHERE name = :name'
+        );
+
+        $request->bindValue(':name', $name);
+        $request->execute();
+    }
 }
