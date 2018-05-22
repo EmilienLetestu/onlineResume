@@ -8,6 +8,9 @@
 
 class AddProjectHandler
 {
+    /**
+     * @return bool
+     */
     private function isSubmitted() :bool
     {
         $name  = $_POST['projectName']  ?? null;
@@ -34,7 +37,7 @@ class AddProjectHandler
             $project->setTech($_POST['projectTech']);
             $project->setUrl($_POST['projectUrl']);
 
-            RenameAndSaveHelper::savePicture('projectPict',$project);
+            RenameAndSaveHelper::saveProjectPicture('projectPict',$project);
 
             $projectManager = new ProjectManager();
 
