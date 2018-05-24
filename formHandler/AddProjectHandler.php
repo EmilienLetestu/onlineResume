@@ -34,7 +34,9 @@ class AddProjectHandler
             $project->setTech($_POST['projectTech']);
             $project->setUrl($_POST['projectUrl']);
 
-            RenameAndSaveHelper::saveProjectPicture('projectPict',$project);
+            $picture = new PictureService();
+
+            $picture->saveProjectPicture('projectPict',$project);
 
             $projectManager = new ProjectManager();
 

@@ -37,11 +37,12 @@ class UpdateProjectHandler
             $manager = new ProjectManager();
 
 
-
             if($_FILES['editPict']['size'] !== 0 && !strpos($_FILES['editPict']['name'],'_project'))
             {
                 unlink(PICT_DIR.$_POST['originalPict']);
-                RenameAndSaveHelper::saveProjectPicture('editPict', $project);
+
+                $picture = new PictureService();
+                $picture->saveProjectPicture('editPict', $project);
                 $manager->updateProject($project, $id);
 
                 return true;
@@ -49,9 +50,9 @@ class UpdateProjectHandler
 
             if ($_FILES['editPict']['size'] === 0 && $project->getName() !== $_POST['originalName'])
             {
-                $suffix = explode('.',$_POST['originalPict']);
-                rename(PICT_DIR.$_POST['originalPict'],PICT_DIR.$project->getName().'_project.'.$suffix[1]);
-                $project->setPictRef($project->getName().'_project.'.$suffix[1]);
+                $picture = new PictureService();
+
+                $picture->renameProjectPicture('originalPict', $project);
                 $manager->updateProject($project, $id);
 
                 return true;
