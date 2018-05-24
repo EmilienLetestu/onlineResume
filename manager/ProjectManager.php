@@ -51,7 +51,7 @@ class ProjectManager extends Bdd
      * @param Project $project
      * @param $id
      */
-    public function updateProject(Project $project, $id)
+    public function updateProject(Project $project, int $id)
     {
         $pdo = $this->getPdo();
 

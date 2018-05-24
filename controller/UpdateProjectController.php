@@ -17,9 +17,9 @@ class UpdateProjectController
 
         if($handler->handle($project, end($request)))
         {
-            return Redirection::redirect('project-list');
+            return Redirection::redirect('dashboard');
         }
 
-        return Redirection::redirect('project-list');
+        return Redirection::redirect('dashboard');
     }
 }

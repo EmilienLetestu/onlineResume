@@ -29,7 +29,7 @@
             <?php $project->getTech();?>
         </p>
         <a href="<?php echo HOST.'delete-project/'.$project->getName();?>">delete</a>
-        <a href="<?php echo HOST.'see-project/'.$project->getId();?>">overview</a>
+        <a href="<?php echo HOST.'edit-project/'.$project->getId();?>">overview</a>
     </div>
     <?php endforeach;?>
 </div>

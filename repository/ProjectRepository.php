@@ -47,7 +47,7 @@ class ProjectRepository extends Bdd
     {
         $pdo = $this->getPdo();
 
-        $request = $pdo->prepare('SELECT * FROM prooject WHERE id = :id');
+        $request = $pdo->prepare('SELECT * FROM project WHERE id = :id');
         $request->bindValue(':id', $id);
         $request->execute();
 
@@ -57,7 +57,7 @@ class ProjectRepository extends Bdd
 
         $project->setId($row['id']);
         $project->setName($row['name']);
-        $project->setPictRef($row['pictRef']);
+        $project->setPictRef($row['pict_ref']);
         $project->setUrl($row['url']);
         $project->setTech($row['tech']);
         $project->setPitch($row['pitch']);

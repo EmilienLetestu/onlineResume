@@ -21,6 +21,22 @@ function modifyForm(skillId){
 
 }
 
+function editProjectForm() {
+    var edit     = document.querySelectorAll('*[id^="edit"]');
+
+    for(var i = 0; i < edit.length; i++){
+
+        var inputId = edit[i].id.split('_');
+        var hiddenInput = document.getElementById('original_' + inputId[1]);
+
+       if (hiddenInput.value !== null && hiddenInput.id !== 'original_pict'){
+
+           document.getElementById(edit[i].id).value = hiddenInput.value;
+       }
+
+    }
+}
+
 function addSkillForm(){
 
     const form       = document.getElementById('skillForm');

@@ -22,6 +22,8 @@ class Router
         "modify-skill"         => ["controller" => "ModifySkillController"],
         "delete-skill"         => ["controller" => "DeleteSkillController"],
         "add-project"          => ["controller" => "AddProjectController"],
+        "edit-project"         => ["controller" => "EditProjectController"],
+        "update-project"       => ["controller" => "UpdateProjectController"],
         "delete-project"       => ["controller" => "DeleteProjectController"]
     ];
 

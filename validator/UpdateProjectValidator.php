@@ -2,22 +2,23 @@
 /**
  * Created by PhpStorm.
  * User: emilien
- * Date: 20/05/2018
- * Time: 23:08
+ * Date: 24/05/2018
+ * Time: 13:28
  */
 
-class ProjectValidator extends FormValidator
+class updateProjectValidator extends  FormValidator
 {
     /**
      * @return bool
      */
     public function isValid() :bool
     {
-        $name    = $_POST['projectName'];
-        $pitch   = $_POST['projectPitch'];
-        $tech    = $_POST['projectTech'];
-        $url     = $_POST['projectUrl'];
-        $pict    = $_FILES['projectPict']['name'];
+        $name    = $_POST['editName'];
+        $pitch   = $_POST['editPitch'];
+        $tech    = $_POST['editTech'];
+        $url     = $_POST['editUrl'];
+        $pict    = $_FILES['editPict'];
+
 
 
         $validationGroup = [
@@ -25,15 +26,14 @@ class ProjectValidator extends FormValidator
             $this->checkLength($tech, 3, 250),
             $this->checkTextLength($pitch, 10, 40),
             $url  !== null ?? $this->checkLength($url, 10, 50),
-            $this->checkFileExtension(
-                $pict,
+            $pict['name'] !== " " ?? $this->checkFileExtension(
+                $pict['name'],
                 ['jpg', 'jpeg', 'png', 'gif']
             ),
-            $this->checkFileSize(
-                $_FILES['projectPict']['size'],
+            $pict['name'] !== " " ?? $this->checkFileSize(
+                $pict['size'],
                 5000000
             )
-
         ];
 
         return $this->validate($validationGroup);
